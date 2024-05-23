@@ -1,36 +1,40 @@
 {
-  "name": "chartjs-plugin-scroll-bar",
-  "version": "1.3.0",
-  "description": "scrollbar data in chart js",
-  "main": "dist/index.min.js",
-  "types": "types/index.d.ts",
-  "scripts": {
-    "test": "npm run test",
-    "type": "tsc",
-    "build:publish": "webpack --mode production --config ./webpack/plugin.config.js && tsc && npm publish"
+  "name": "@8uff3r/chartjs-plugin-scroll-bar",
+  "version": "0.2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/chartjs-plugin-scroll-bar.js",
+      "require": "./dist/chartjs-plugin-scroll-bar.cjs"
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/soloraid/chartjs-plugin-scroll-bar.git"
-  },
-  "keywords": [
-    "chartjs/plugins/scrollbar"
+  "main": "./dist/chartjs-plugin-scroll-bar.cjs",
+  "module": "./dist/chartjs-plugin-scroll-bar.js",
+  "types": "./dist/chartjs-plugin-scroll-bar.d.ts",
+  "files": [
+    "dist"
   ],
-  "author": "hashem pourallahverdi",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/soloraid/chartjs-plugin-scroll-bar/issues"
-  },
-  "homepage": "https://github.com/soloraid/chartjs-plugin-scroll-bar#readme",
-  "peerDependencies": {
-    "chart.js": ">=3.9.1"
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "release": "pnpm build && pnpm publish --access public",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "@types/chart.js": "^2.9.34",
-    "ts-loader": "^9.4.4",
-    "typescript": "^5.1.6",
-    "webpack": "^5.88.1",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@types/node": "^20.12.12",
+    "husky": "^9.0.11",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vite-plugin-dts": "^3.9.1"
+  },
+  "lint-staged": {
+    "*.ts": "pnpm run lint"
+  },
+  "dependencies": {
+    "@types/chart.js": "^2.9.41",
+    "camelcase": "^8.0.0",
+    "chart.js": "^4.4.3"
   }
 }

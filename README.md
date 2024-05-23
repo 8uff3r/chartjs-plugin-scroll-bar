@@ -1,17 +1,19 @@
 # Chart.js plugin scroll bar
 This plugin for Chart.js that make scrollable charts in descriptors.
-Requires **Chart.js v3.9.1 or higher**.
+Requires **Chart.js v4.4.0 or higher**.
+
+It's a fork of [chartjs-plugin-scroll-bar](https://github.com/soloraid/chartjs-plugin-scroll-bar) with some additions for my own use.
 
 # Installation
 
 ### npm
 ```
-npm install chartjs-plugin-scroll-bar
+npm install @8uffer/chartjs-plugin-scroll-bar
 ```
 
 ```javascript
 import { Chart } from 'chartjs';
-import ChartjsPluginScrollBar from 'chartjs-plugin-scroll-bar';
+import ChartjsPluginScrollBar from '@8uffer/chartjs-plugin-scroll-bar';
 
 Chart.register(ChartjsPluginScrollBar);
 ```
@@ -79,3 +81,4 @@ For bugs and feature requests, [please create an issue](https://github.com/solor
 ### Development
 - install: `npm install`
 - publish plugin: `npm version (major|minor|patch) && npm run build:publish`
+

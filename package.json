@@ -1,6 +1,6 @@
 {
   "name": "@8uff3r/chartjs-plugin-scroll-bar",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "exports": {
     ".": {
@@ -27,14 +27,15 @@
     "husky": "^9.0.11",
     "typescript": "^5.4.5",
     "vite": "^5.2.11",
-    "vite-plugin-dts": "^3.9.1"
-  },
-  "lint-staged": {
-    "*.ts": "pnpm run lint"
-  },
-  "dependencies": {
+    "vite-plugin-dts": "^3.9.1",
     "@types/chart.js": "^2.9.41",
     "camelcase": "^8.0.0",
     "chart.js": "^4.4.3"
+  },
+  "peerDependencies": {
+    "chart.js": ">=4.4.0"
+  },
+  "lint-staged": {
+    "*.ts": "pnpm run lint"
   }
 }
